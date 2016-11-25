@@ -4991,6 +4991,7 @@ angular.module('noVNC.rfb', ['noVNC.input', 'noVNC.display', 'noVNC.jsunzip'])
 				rmode = display.get_render_mode();
 
 				ws = new Websock()();
+				window.HACKNOVNCWS = ws;
 				ws.on('message', handle_message);
 				ws.on('open', function() {
 					if (rfb_state === 'connect') {
